@@ -6,6 +6,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>persistence.models.entities.User</class>
 		<class>persistence.models.entities.Tema</class>
+		<class>persistence.models.entities.Voto</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="none" /> <!--drop-and-create-tables none -->
 			<property name="eclipselink.logging.level" value="INFO" /> <!-- OFF,WARNING,INFO,FINE,ALL -->
