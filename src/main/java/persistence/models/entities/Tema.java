@@ -7,6 +7,8 @@ import javax.persistence.Id;
 @Entity
 public class Tema {
 	
+	public static final Object TABLE = null;
+
 	@Id
     @GeneratedValue
     private Integer id;
