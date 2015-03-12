@@ -9,6 +9,10 @@ public class Tema {
 	
 	public static final Object TABLE = null;
 
+	public static final String ID = null;
+
+	public static final String NAME = null;
+
 	@Id
     @GeneratedValue
     private Integer id;
