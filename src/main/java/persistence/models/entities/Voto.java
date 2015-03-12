@@ -20,7 +20,7 @@ public class Voto {
 
 	private int escala;
 
-	private int ipUsuario;
+	private String ipUsuario;
 
 	@Enumerated(EnumType.STRING)
 	private NivelEstudios nivelEstudios;
@@ -39,7 +39,7 @@ public class Voto {
 	@JoinColumn
 	private Tema tema;
 
-	public Voto(int escala, int ipUsuario, NivelEstudios nivelEstudios) {
+	public Voto(int escala, String ipUsuario, NivelEstudios nivelEstudios) {
 		this.escala = escala;
 		this.ipUsuario = ipUsuario;
 		this.nivelEstudios = nivelEstudios;
@@ -64,11 +64,11 @@ public class Voto {
 		this.escala = escala;
 	}
 
-	public int getIpUsuario() {
+	public String getIpUsuario() {
 		return ipUsuario;
 	}
 
-	public void setIpUsuario(int ipUsuario) {
+	public void setIpUsuario(String ipUsuario) {
 		this.ipUsuario = ipUsuario;
 	}
 
