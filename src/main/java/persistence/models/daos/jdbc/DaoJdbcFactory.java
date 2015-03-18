@@ -9,14 +9,13 @@ import org.apache.logging.log4j.LogManager;
 
 import persistence.models.daos.TemaDao;
 import persistence.models.daos.DaoFactory;
-import persistence.models.daos.UserDao;
 import persistence.models.daos.VotoDao;
 import persistence.models.entities.Tema;
 
 public class DaoJdbcFactory extends DaoFactory {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
 
-    private static final String URL = "jdbc:mysql://localhost:3306/jee";
+    private static final String URL = "jdbc:mysql://localhost:3306/miwjee";
 
     private static final String USER = "root";
 
@@ -56,12 +55,6 @@ public class DaoJdbcFactory extends DaoFactory {
     public TemaDao getTemaDao() {
         return new TemaDaoJdbc();
     }
-
-	@Override
-	public UserDao getUserDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public VotoDao getVotoDao() {
