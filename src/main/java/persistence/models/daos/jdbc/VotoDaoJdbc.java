@@ -37,4 +37,9 @@ public class VotoDaoJdbc extends GenericDaoJdbc<Voto, Integer> implements VotoDa
 		return null;
 	}
 
+	public static String sqlToCreateTable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
