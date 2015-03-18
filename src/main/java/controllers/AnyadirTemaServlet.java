@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IncorporarTemaServlet extends HttpServlet {
+public class AnyadirTemaServlet extends HttpServlet {
 
 	/**
 	 * 
