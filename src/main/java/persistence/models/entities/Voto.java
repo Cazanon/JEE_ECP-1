@@ -11,6 +11,12 @@ import persistence.models.utils.NivelEstudios;
 @Entity
 public class Voto {
 
+	public static final String TABLE = "voto";
+	public static final String ID = "id";
+	public static final String VALORACION = "valoracion";
+	public static final String IPUSUARIO = "ipUsuario";
+	public static final String NIVELESTUDIOS = "nivelEstudios";
+
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -30,7 +36,7 @@ public class Voto {
 
 	public Voto() {
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -43,8 +49,8 @@ public class Voto {
 		return valoracion;
 	}
 
-	public void setValoracion(int escala) {
-		this.valoracion = escala;
+	public void setValoracion(int valoracion) {
+		this.valoracion = valoracion;
 	}
 
 	public String getIpUsuario() {
@@ -62,5 +68,21 @@ public class Voto {
 	public void setNivelEstudios(NivelEstudios nivelEstudios) {
 		this.nivelEstudios = nivelEstudios;
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		assert obj != null;
+		Voto other = (Voto) obj;
+		boolean result = id.equals(other.id) && valoracion == other.valoracion &&
+				ipUsuario.equals(other.ipUsuario) && nivelEstudios.equals(other.nivelEstudios);
+
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Voto [id=" + id + ", valoracion=" + valoracion + ", ipUsuario=" + ipUsuario + 
+				"nivelEstudios=" + nivelEstudios + "]";
+	}
+
 }
