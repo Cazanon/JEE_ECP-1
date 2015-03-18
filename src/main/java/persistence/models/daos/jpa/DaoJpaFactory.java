@@ -12,10 +12,9 @@ import org.eclipse.persistence.config.PersistenceUnitProperties;
 import persistence.models.daos.VotoDao;
 import persistence.models.daos.TemaDao;
 import persistence.models.daos.DaoFactory;
-import persistence.models.daos.UserDao;
 
 public class DaoJpaFactory extends DaoFactory {
-	private static final String PERSISTENCE_UNIT = "tictactoe";
+	private static final String PERSISTENCE_UNIT = "JEE_ECP";
 
 	private static EntityManagerFactory entityManagerFactory = Persistence
 			.createEntityManagerFactory(PERSISTENCE_UNIT);
@@ -34,11 +33,6 @@ public class DaoJpaFactory extends DaoFactory {
 
 	public static EntityManagerFactory getEntityManagerFactory() {
 		return entityManagerFactory;
-	}
-
-	@Override
-	public UserDao getUserDao() {
-		return new UserDaoJpa();
 	}
 
 	@Override
