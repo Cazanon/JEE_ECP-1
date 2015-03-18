@@ -1,13 +1,10 @@
 package persistence.models.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import persistence.models.utils.NivelEstudios;
 
@@ -18,29 +15,15 @@ public class Voto {
 	@GeneratedValue
 	private Integer id;
 
-	private int escala;
+	private int valoracion;
 
 	private String ipUsuario;
 
 	@Enumerated(EnumType.STRING)
 	private NivelEstudios nivelEstudios;
 
-	// Relación unidireccional: 0..*:1
-	// relación mapeada aqui
-	// Se aplica cascada
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn
-	private User user;
-
-	// Relación unidireccional: 0..*:1
-	// relación mapeada aqui
-	// Se aplica cascada
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn
-	private Tema tema;
-
-	public Voto(int escala, String ipUsuario, NivelEstudios nivelEstudios) {
-		this.escala = escala;
+	public Voto(int valoracion, String ipUsuario, NivelEstudios nivelEstudios) {
+		this.valoracion = valoracion;
 		this.ipUsuario = ipUsuario;
 		this.nivelEstudios = nivelEstudios;
 	}
@@ -56,12 +39,12 @@ public class Voto {
 		this.id = id;
 	}
 
-	public int getEscala() {
-		return escala;
+	public int getValoracion() {
+		return valoracion;
 	}
 
-	public void setEscala(int escala) {
-		this.escala = escala;
+	public void setValoracion(int escala) {
+		this.valoracion = escala;
 	}
 
 	public String getIpUsuario() {
@@ -78,22 +61,6 @@ public class Voto {
 
 	public void setNivelEstudios(NivelEstudios nivelEstudios) {
 		this.nivelEstudios = nivelEstudios;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Tema getTema() {
-		return tema;
-	}
-
-	public void setTema(Tema tema) {
-		this.tema = tema;
 	}
 	
 }
