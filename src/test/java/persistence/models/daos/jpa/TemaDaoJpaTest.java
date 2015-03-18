@@ -25,7 +25,7 @@ public class TemaDaoJpaTest {
 
     @Before
     public void before() {
-        this.tema = new Tema("tema");
+        this.tema = new Tema("tema","pregunta");
         dao = DaoFactory.getFactory().getTemaDao();
         dao.create(tema);
     }
@@ -38,6 +38,7 @@ public class TemaDaoJpaTest {
     @Test
     public void testUpdateCategory() {
     	tema.setName("other");
+    	tema.setPregunta("other");
         dao.update(tema);
         assertEquals(tema, dao.read(tema.getId()));
     }
@@ -50,7 +51,7 @@ public class TemaDaoJpaTest {
 
     @Test
     public void testFindAll() {
-        this.tema = new Tema("tema");
+        this.tema = new Tema("tema2","pregunta2");
         dao = DaoFactory.getFactory().getTemaDao();
         dao.create(tema);
         assertEquals(2, dao.findAll().size());
