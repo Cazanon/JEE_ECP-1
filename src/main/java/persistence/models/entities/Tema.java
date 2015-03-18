@@ -1,17 +1,20 @@
 package persistence.models.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Tema {
-	
-	public static final Object TABLE = null;
 
-	public static final String ID = null;
-
-	public static final String NAME = null;
+	public static final String TABLE = "tema";
+	public static final String ID = "id";
+	public static final String NAME = "name";
+	public static final String PREGUNTA = "pregunta";
 
 	@Id
     @GeneratedValue
@@ -19,20 +22,29 @@ public class Tema {
 	
 	private String name;
 	
-	public Tema(String name) {
+	private String pregunta;
+	
+	// Relación unidireccional: 1:0..n
+    // relación mapeada en una tabla de unión
+    // Se aplica cascada
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Voto> votos;
+    
+    public Tema(String name, String pregunta) {
 		this.name = name;
+		this.pregunta = pregunta;
 	}
-	
-	public Tema() {
-    }
-	
-	public Integer getId() {
-        return id;
+    
+    public Tema(){
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -41,19 +53,37 @@ public class Tema {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getPregunta() {
+		return pregunta;
+	}
+
+	public void setPregunta(String pregunta) {
+		this.pregunta = pregunta;
+	}
+
+	public List<Voto> getVotos() {
+		return votos;
+	}
+
+	public void setVotos(List<Voto> votos) {
+		this.votos = votos;
+	}
 	
 	@Override
     public boolean equals(Object obj) {
-        assert obj != null;
+		assert obj != null;
         Tema other = (Tema) obj;
-        boolean result = id.equals(other.id) && name.equals(other.name);
+        boolean result = id.equals(other.id) && name.equals(other.name)
+                && pregunta.equals(other.pregunta);
         
         return result;
     }
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + "]";
+    	return "Tema [id=" + id + ", name=" + name + ", pregunta=" + pregunta 
+    			+ ", votos=" + votos + "]";
     }
 
 }
