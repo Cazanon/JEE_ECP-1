@@ -10,24 +10,18 @@
 </head>
 <body>
 	<h1>Añadir Tema</h1>
-	<c:set var="anyadirTemaView" scope="request" value="${tema}" />
-	<div>${anyadirTemaView.update()}</div>
+	<c:set var="anyadirTemaBean" scope="request" value="${tema}" />
+	<div>${anyadirTemaBean.update()}</div>
 	<form action="/Web/v1/rol" method="post">
 		<p>Temas actuales:</p>
 		<ul>
-			<c:forEach var="tema" items="${anyadirTemaView.temas}">
+			<c:forEach var="tema" items="${anyadirTemaBean.temas}">
 				<li>${tema}</li>
 			</c:forEach>
 		</ul>
-		<p>
-			Rol nuevo: <input name="tema" type="text" value="" />
-		</p>
-		<p>
-			<input type="submit" value="Enviar" />
-		</p>
+		<p>Tema nuevo: <input name="tema" type="text" value="" /></p>
+		<p><input type="submit" value="Enviar" /></p>
 	</form>
-	<p>
-		<a href="/aplicacionVotacionView/home">Volver a Home</a>
-	</p>
+	<p><a href="/aplicacionVotacionView/home">Volver a Home</a></p>
 </body>
 </html>

@@ -1,11 +1,15 @@
 package views.beans;
 
-public class AnyadirTemaView {
+import java.io.Serializable;
+
+public class AnyadirTemaBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	private String[] temas;
 
     private String tema;
 
-    public AnyadirTemaView() {
+    public AnyadirTemaBean() {
     }
 
     public String[] getTemas() {
