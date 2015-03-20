@@ -10,7 +10,7 @@
 	<h1>Java EE. Aplicación Votación</h1>
 	<p><span>Votar:</span> <a href="VotarView.jsp">Votar</a>
 	<p><span>Ver votaciones:</span> <a href="VerVotacionesView.jsp">Ver Votaciones</a>
-	<p><span>Añadir Tema:</span> <a href="anyadirTemaView.jsp">Añadir Tema</a>
+	<p><span>Añadir Tema:</span> <a href="/JEE_ECP/views/anyadirTemaServlet">Añadir Tema</a>
 	<p><span>Eliminar Tema:</span> <a href="EliminarTemaView.jsp">Eliminar Tema</a>
 </body>
 </html>
