@@ -12,8 +12,8 @@ public class AnyadirTemaServletController implements AnyadirTemaController {
 
 	@Override
 	public void anyadirTema(Tema tema) {
-		// TODO Auto-generated method stub
-
+    	DaoFactory.setFactory(new DaoJpaFactory());
+    	DaoFactory.getFactory().getTemaDao().create(tema);
 	}
 
 	@Override
