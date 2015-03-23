@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import controllers.ControllerFactory;
+import controllers.servlet.ControllerServletFactory;
 import persistence.models.daos.DaoFactory;
 import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
@@ -53,7 +55,7 @@ public class AnyadirTemaBean implements Serializable {
     	Tema tema = new Tema();
     	tema.setName(this.getTema());
     	tema.setPregunta(this.getPregunta());
-    	DaoFactory.setFactory(new DaoJpaFactory());
-    	DaoFactory.getFactory().getTemaDao().create(tema);
+    	ControllerFactory.setFactory(new ControllerServletFactory());
+    	ControllerFactory.getFactory().getAnyadirTemaController().anyadirTema(tema);
     }
 }
