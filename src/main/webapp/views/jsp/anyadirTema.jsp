@@ -20,9 +20,9 @@
 			</c:forEach>
 		</ul>
 		<p>Tema nuevo: <input name="tema" type="text" value="${anyadirTemaBean.tema}" /></p>
-		<p>Pregunta: <input name="pregunta" type="text" value="" /></p>
+		<p>Pregunta: <input name="pregunta" type="text" value="${anyadirTemaBean.pregunta}" /></p>
 		<p><input type="submit" value="Enviar" /></p>
 	</form>
-	<p><a href="/JEE_ECP">Volver a Home</a></p>
+	<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
 </body>
 </html>

@@ -6,8 +6,6 @@ import java.util.List;
 
 import controllers.ControllerFactory;
 import controllers.servlet.ControllerServletFactory;
-import persistence.models.daos.DaoFactory;
-import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
 
 public class AnyadirTemaBean implements Serializable {
