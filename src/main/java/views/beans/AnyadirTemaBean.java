@@ -9,8 +9,6 @@ public class AnyadirTemaBean implements Serializable {
 	private ArrayList<String> temas;
 
     private String tema;
-    
-    private String temaNuevo;
 
     public AnyadirTemaBean() {
     }
@@ -32,9 +30,10 @@ public class AnyadirTemaBean implements Serializable {
         this.temas.add("deporte");
         this.temas.add("cultura");
         this.temas.add("gastronomia");
+        //recuperar temas de bbdd
     }
     
-    public void anyadirTema() {
-    	this.temas.add(temaNuevo);
+    public void process() {
+    	//insertar tema en bbdd
     }
 }
