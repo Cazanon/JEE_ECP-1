@@ -31,6 +31,11 @@ public class Dispatcher extends HttpServlet {
 			request.setAttribute(action, anyadirTemaBean);
 			view = action;
 			break;
+		case "eliminarTema":
+			AnyadirTemaBean eliminarTemaBean = new AnyadirTemaBean();
+			request.setAttribute(action, eliminarTemaBean);
+			view = action;
+			break;
 		default:
 			view = "home";
 		}

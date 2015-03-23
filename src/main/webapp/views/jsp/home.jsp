@@ -15,6 +15,6 @@
 	<p>
 		<a href="/JEE_ECP/jsp/anyadirTema">Añadir Tema</a>
 	<p>
-		<a href="EliminarTemaView.jsp">Eliminar Tema</a> <br />
+		<a href="/JEE_ECP/jsp/eliminarTema">Eliminar Tema</a> <br />
 </body>
 </html>
