@@ -4,6 +4,6 @@ import persistence.models.entities.Tema;
 
 public interface AnyadirTemaController {
 
-	void anadirTema(Tema tema);
+	void anyadirTema(Tema tema);
 	
 }
