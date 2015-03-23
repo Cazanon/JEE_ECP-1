@@ -19,7 +19,8 @@
 				<li>${tema}</li>
 			</c:forEach>
 		</ul>
-		<p>Tema nuevo: <input name="tema" type="text" value="" /></p>
+		<p>Tema nuevo: <input name="tema" type="text" value="${anyadirTemaBean.tema}" /></p>
+		<p>Pregunta: <input name="pregunta" type="text" value="" /></p>
 		<p><input type="submit" value="Enviar" /></p>
 	</form>
 	<p><a href="/JEE_ECP">Volver a Home</a></p>

@@ -2,18 +2,25 @@ package views.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+
+import persistence.models.daos.DaoFactory;
+import persistence.models.daos.jpa.DaoJpaFactory;
+import persistence.models.entities.Tema;
 
 public class AnyadirTemaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private ArrayList<String> temas;
+	private List<String> temas;
 
     private String tema;
+    
+    private String pregunta;
 
     public AnyadirTemaBean() {
     }
 
-    public ArrayList<String> getTemas() {
+    public List<String> getTemas() {
         return temas;
     }
 
@@ -24,16 +31,29 @@ public class AnyadirTemaBean implements Serializable {
     public void setTema(String tema) {
         this.tema = tema;
     }
+    
+    public String getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
+    }
 
     public void update() {
+    	DaoFactory.setFactory(new DaoJpaFactory());
+    	List<Tema> listaTemas = DaoFactory.getFactory().getTemaDao().findAll();
     	this.temas = new ArrayList<String>();
-        this.temas.add("deporte");
-        this.temas.add("cultura");
-        this.temas.add("gastronomia");
-        //recuperar temas de bbdd
+    	for(Tema tema : listaTemas) {
+    		this.temas.add(tema.getName());
+    	}
     }
     
     public void process() {
-    	//insertar tema en bbdd
+    	Tema tema = new Tema();
+    	tema.setName(this.getTema());
+    	tema.setPregunta(this.getPregunta());
+    	DaoFactory.setFactory(new DaoJpaFactory());
+    	DaoFactory.getFactory().getTemaDao().create(tema);
     }
 }
