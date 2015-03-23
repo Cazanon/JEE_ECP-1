@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/jsp/*")
 public class Dispatcher extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static String PATH_ROOT_VIEW = "/views/jsp/";
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String action = request.getPathInfo().substring(1);
-		
+
 		String view;
 		switch(action) {
 		case "anyadirTema":
@@ -34,16 +34,30 @@ public class Dispatcher extends HttpServlet {
 		default:
 			view = "home";
 		}
-		
+
 		this.getServletContext().getRequestDispatcher(PATH_ROOT_VIEW + view + ".jsp")
-        .forward(request, response);
+		.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		String action = request.getPathInfo().substring(1);
+
+		String view;
+		switch(action) {
+		case "anyadirTema":
+			view = "home";
+			break;
+		default:
+			view = "home";
+		}
+
+		this.getServletContext().getRequestDispatcher(PATH_ROOT_VIEW + view + ".jsp")
+		.forward(request, response);
+
 	}
 
 }
