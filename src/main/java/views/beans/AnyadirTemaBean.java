@@ -43,12 +43,9 @@ public class AnyadirTemaBean implements Serializable {
     }
 
     public void update() {
-    	DaoFactory.setFactory(new DaoJpaFactory());
-    	List<Tema> listaTemas = DaoFactory.getFactory().getTemaDao().findAll();
+    	ControllerFactory.setFactory(new ControllerServletFactory());
     	this.temas = new ArrayList<String>();
-    	for(Tema tema : listaTemas) {
-    		this.temas.add(tema.getName());
-    	}
+    	this.temas.addAll(ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas());
     }
     
     public void process() {
