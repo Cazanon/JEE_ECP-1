@@ -15,7 +15,7 @@
 	<form action="/JEE_ECP/jsp/eliminarTema" method="post">
 		<p>Temas actuales:</p>
 
-		<select multiple="multiple">
+		<select>
 			<c:forEach var="tema" items="${eliminarTemaBean.temas}">
 				<option value="${tema}">${tema}</option>
 			</c:forEach>
