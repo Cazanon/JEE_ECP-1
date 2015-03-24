@@ -8,7 +8,7 @@ import controllers.ControllerFactory;
 import controllers.servlet.ControllerServletFactory;
 import persistence.models.entities.Tema;
 
-public class AnyadirTemaBean implements Serializable, GenericBean {
+public class EliminarTemaBean implements Serializable, GenericBean {
 	private static final long serialVersionUID = 1L;
 
 	private List<String> temas;
@@ -17,7 +17,7 @@ public class AnyadirTemaBean implements Serializable, GenericBean {
     
     private String pregunta;
 
-    public AnyadirTemaBean() {
+    public EliminarTemaBean() {
     }
 
     public List<String> getTemas() {

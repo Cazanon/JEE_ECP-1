@@ -32,7 +32,7 @@ public class Dispatcher extends HttpServlet {
 			view = action;
 			break;
 		case "eliminarTema":
-			AnyadirTemaBean eliminarTemaBean = new AnyadirTemaBean();
+			EliminarTemaBean eliminarTemaBean = new EliminarTemaBean();
 			request.setAttribute(action, eliminarTemaBean);
 			view = action;
 			break;

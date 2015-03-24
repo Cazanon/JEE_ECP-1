@@ -6,23 +6,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Añadir Tema</title>
+<title>Eliminar Tema</title>
 </head>
 <body>
-	<h1>Añadir Tema</h1>
-	<c:set var="anyadirTemaBean" scope="request" value="${eliminarTema}" />
-	<div>${anyadirTemaBean.update()}</div>
-	<form action="/JEE_ECP/jsp/anyadirTema" method="post">
+	<h1>Eliminar Tema</h1>
+	<c:set var="eliminarTemaBean" scope="request" value="${eliminarTema}" />
+	<div>${eliminarTemaBean.update()}</div>
+	<form action="/JEE_ECP/jsp/eliminarTema" method="post">
 		<p>Temas actuales:</p>
 
 		<select multiple="multiple">
-			<c:forEach var="tema" items="${anyadirTemaBean.temas}">
+			<c:forEach var="tema" items="${eliminarTemaBean.temas}">
 				<option value="${tema}">${tema}</option>
 			</c:forEach>
 		</select>
 
 		<p>
-			<input type="submit" value="Enviar" />
+			<input type="submit" value="Eliminar" />
 		</p>
 	</form>
 	<p>
