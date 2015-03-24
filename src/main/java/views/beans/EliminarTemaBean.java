@@ -11,7 +11,7 @@ import persistence.models.entities.Tema;
 public class EliminarTemaBean implements Serializable, GenericBean {
 	private static final long serialVersionUID = 1L;
 
-	private List<String> temas;
+	private List<Tema> temas;
 
     private String tema;
     
@@ -20,7 +20,7 @@ public class EliminarTemaBean implements Serializable, GenericBean {
     public EliminarTemaBean() {
     }
 
-    public List<String> getTemas() {
+    public List<Tema> getTemas() {
         return temas;
     }
 
@@ -42,8 +42,8 @@ public class EliminarTemaBean implements Serializable, GenericBean {
 
     public void update() {
     	ControllerFactory.setFactory(new ControllerServletFactory());
-    	this.temas = new ArrayList<String>();
-    	this.temas.addAll(ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas());
+    	this.temas = ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas();
+    	//this.temas.addAll(ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas());
     }
     
     public void process() {

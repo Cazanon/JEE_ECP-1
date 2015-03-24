@@ -17,7 +17,7 @@
 
 		<select>
 			<c:forEach var="tema" items="${eliminarTemaBean.temas}">
-				<option value="${tema}">${tema}</option>
+				<option value="${tema.id}">${tema.name}</option>
 			</c:forEach>
 		</select>
 

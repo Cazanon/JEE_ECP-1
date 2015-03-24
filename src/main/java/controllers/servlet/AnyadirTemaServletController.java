@@ -1,6 +1,5 @@
 package controllers.servlet;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import persistence.models.daos.DaoFactory;
@@ -17,14 +16,14 @@ public class AnyadirTemaServletController implements AnyadirTemaController {
 	}
 
 	@Override
-	public ArrayList<String> obtenerListaTemas() {
+	public List<Tema> obtenerListaTemas() {
 		DaoFactory.setFactory(new DaoJpaFactory());
     	List<Tema> listaTemas = DaoFactory.getFactory().getTemaDao().findAll();
-    	ArrayList<String> listaNameTemas = new ArrayList<String>();
-    	for(Tema tema : listaTemas) {
-    		listaNameTemas.add(tema.getName());
-    	}
-    	return listaNameTemas;
+//    	ArrayList<String> listaNameTemas = new ArrayList<String>();
+//    	for(Tema tema : listaTemas) {
+//    		listaNameTemas.add(tema.getName());
+//    	}
+    	return listaTemas;
 	}
 
 }

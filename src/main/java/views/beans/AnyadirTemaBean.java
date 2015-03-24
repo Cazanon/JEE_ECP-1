@@ -43,7 +43,7 @@ public class AnyadirTemaBean implements Serializable, GenericBean {
     public void update() {
     	ControllerFactory.setFactory(new ControllerServletFactory());
     	this.temas = new ArrayList<String>();
-    	this.temas.addAll(ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas());
+    	//this.temas.addAll(ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas());
     }
     
     public void process() {
