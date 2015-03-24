@@ -1,11 +1,12 @@
 package views.beans;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import controllers.ControllerFactory;
 import controllers.servlet.ControllerServletFactory;
+import persistence.models.daos.DaoFactory;
+import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
 
 public class EliminarTemaBean implements Serializable, GenericBean {
@@ -13,9 +14,7 @@ public class EliminarTemaBean implements Serializable, GenericBean {
 
 	private List<Tema> temas;
 
-    private String tema;
-    
-    private String pregunta;
+    private Integer id;
 
     public EliminarTemaBean() {
     }
@@ -24,20 +23,12 @@ public class EliminarTemaBean implements Serializable, GenericBean {
         return temas;
     }
 
-    public String getTema() {
-        return tema;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
-    }
-    
-    public String getPregunta() {
-        return pregunta;
-    }
-
-    public void setPregunta(String pregunta) {
-        this.pregunta = pregunta;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void update() {
@@ -47,10 +38,12 @@ public class EliminarTemaBean implements Serializable, GenericBean {
     }
     
     public void process() {
-    	Tema tema = new Tema();
-    	tema.setName(this.getTema());
-    	tema.setPregunta(this.getPregunta());
-    	ControllerFactory.setFactory(new ControllerServletFactory());
-    	ControllerFactory.getFactory().getAnyadirTemaController().anyadirTema(tema);
+    	DaoFactory.setFactory(new DaoJpaFactory());
+    	DaoFactory.getFactory().getTemaDao().deleteById(id);
+//    	Tema tema = new Tema();
+//    	tema.setName(this.getTema());
+//    	tema.setPregunta(this.getPregunta());
+//    	ControllerFactory.setFactory(new ControllerServletFactory());
+//    	ControllerFactory.getFactory().getAnyadirTemaController().anyadirTema(tema);
     }
 }
