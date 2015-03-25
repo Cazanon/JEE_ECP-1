@@ -6,6 +6,6 @@ import persistence.models.entities.Voto;
 
 public interface VerVotacionesController {
 	
-	List<Voto> obtenerListaVotosPorTema();
+	List<Voto> obtenerListaVotosPorTema(Integer id);
 
 }
