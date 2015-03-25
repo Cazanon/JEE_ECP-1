@@ -1,13 +1,9 @@
 package controllers;
 
-import java.util.List;
-
 import persistence.models.entities.Tema;
 
-public interface EliminarTemaController {
+public interface EliminarTemaController extends TemaController {
 
 	void eliminarTema(Tema tema);
-
-	List<Tema> obtenerListaTemas();
 
 }
