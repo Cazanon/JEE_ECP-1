@@ -37,8 +37,8 @@ public class Dispatcher extends HttpServlet {
 			view = action;
 			break;
 		case "verVotaciones":
-			AnyadirTemaBean anyadirTemaBean2 = new AnyadirTemaBean();
-			request.setAttribute(action, anyadirTemaBean2);
+			VerVotacionesBean verVotacionesBean = new VerVotacionesBean();
+			request.setAttribute(action, verVotacionesBean);
 			view = action;
 			break;
 		default:
