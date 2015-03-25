@@ -21,6 +21,9 @@
 			</c:forEach>
 		</select>
 
+		<p>Número de votos:</p>
+		<p>${verVotacionesBean.numeroVotosPorTema}</p>
+
 		<p>
 			<input type="submit" value="Ver Votaciones" />
 		</p>
