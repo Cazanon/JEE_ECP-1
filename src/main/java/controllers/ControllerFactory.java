@@ -15,4 +15,6 @@ public abstract class ControllerFactory {
 	public abstract AnyadirTemaController getAnyadirTemaController();
 
 	public abstract EliminarTemaController getEliminarTemaController();
+	
+	public abstract TemaController getTemaController();
 }
