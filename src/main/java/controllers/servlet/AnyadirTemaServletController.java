@@ -1,25 +1,16 @@
 package controllers.servlet;
 
-import java.util.List;
-
 import persistence.models.daos.DaoFactory;
 import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
 import controllers.AnyadirTemaController;
 
-public class AnyadirTemaServletController implements AnyadirTemaController {
+public class AnyadirTemaServletController extends TemaServletController implements AnyadirTemaController {
 
 	@Override
 	public void anyadirTema(Tema tema) {
     	DaoFactory.setFactory(new DaoJpaFactory());
     	DaoFactory.getFactory().getTemaDao().create(tema);
-	}
-
-	@Override
-	public List<Tema> obtenerListaTemas() {
-		DaoFactory.setFactory(new DaoJpaFactory());
-    	List<Tema> listaTemas = DaoFactory.getFactory().getTemaDao().findAll();
-    	return listaTemas;
 	}
 
 }
