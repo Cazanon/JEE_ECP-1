@@ -12,13 +12,19 @@
 	<h1>Ver Votaciones</h1>
 	<c:set var="verVotacionesBean" scope="request" value="${verVotaciones}" />
 	<div>${verVotacionesBean.update()}</div>
-	
-	<ul>
-		<c:forEach var="tema" items="${verVotacionesBean.temas}">
-			<li>${tema.name}</li>
-		</c:forEach>
-	</ul>
-	
+	<form action="/JEE_ECP/jsp/verVotaciones" method="post">
+		<p>Temas actuales:</p>
+
+		<select name="select" id="select" >
+			<c:forEach var="tema" items="${verVotacionesBean.temas}">
+				<option value="${tema.id}">${tema.name}</option>
+			</c:forEach>
+		</select>
+
+		<p>
+			<input type="submit" value="Ver Votaciones" />
+		</p>
+	</form>
 	<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
 </body>
 </html>
