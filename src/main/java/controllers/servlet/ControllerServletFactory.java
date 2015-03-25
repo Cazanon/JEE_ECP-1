@@ -4,12 +4,14 @@ import controllers.AnyadirTemaController;
 import controllers.ControllerFactory;
 import controllers.EliminarTemaController;
 import controllers.TemaController;
+import controllers.VerVotacionesController;
 
 public class ControllerServletFactory extends ControllerFactory {
 
 	private AnyadirTemaController anyadirTemaController;
 	private EliminarTemaController eliminarTemaController;
 	private TemaController temaController;
+	private VerVotacionesController verVotacionesController;
 
 	@Override
 	public AnyadirTemaController getAnyadirTemaController() {
@@ -33,6 +35,14 @@ public class ControllerServletFactory extends ControllerFactory {
 			this.temaController = new TemaServletController();
 		}
 		return temaController;
+	}
+
+	@Override
+	public VerVotacionesController getVerVotacionesController() {
+		if (this.verVotacionesController == null) {
+			this.verVotacionesController = new VerVotacionesServletController();
+		}
+		return verVotacionesController;
 	}
 
 }
