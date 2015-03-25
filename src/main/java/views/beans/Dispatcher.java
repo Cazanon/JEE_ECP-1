@@ -55,7 +55,7 @@ public class Dispatcher extends HttpServlet {
 		switch(action) {
 		case "anyadirTema":
 			AnyadirTemaBean anyadirTemaBean = new AnyadirTemaBean();
-			anyadirTemaBean.setTema(request.getParameter("tema"));
+			anyadirTemaBean.setName(request.getParameter("name"));
 			anyadirTemaBean.setPregunta(request.getParameter("pregunta"));
 			anyadirTemaBean.process();
 			view = "home";
