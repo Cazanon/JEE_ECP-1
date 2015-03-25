@@ -16,11 +16,11 @@
 		<p>Temas actuales:</p>
 		<ul>
 			<c:forEach var="tema" items="${anyadirTemaBean.temas}">
-				<li>${tema}</li>
+				<li>${tema.name}</li>
 			</c:forEach>
 		</ul>
-		<p>Tema nuevo: <input name="tema" type="text" value="${anyadirTemaBean.tema}" /></p>
-		<p>Pregunta: <input name="pregunta" type="text" value="${anyadirTemaBean.pregunta}" /></p>
+		<p>Tema nuevo: <input name="name" type="text" /></p>
+		<p>Pregunta: <input name="pregunta" type="text" /></p>
 		<p><input type="submit" value="Enviar" /></p>
 	</form>
 	<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
