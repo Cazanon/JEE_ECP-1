@@ -1,8 +1,6 @@
 package views.beans;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import controllers.ControllerFactory;
 import controllers.servlet.ControllerServletFactory;
