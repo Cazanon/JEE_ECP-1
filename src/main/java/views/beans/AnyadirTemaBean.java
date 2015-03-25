@@ -8,29 +8,23 @@ import controllers.ControllerFactory;
 import controllers.servlet.ControllerServletFactory;
 import persistence.models.entities.Tema;
 
-public class AnyadirTemaBean implements Serializable, GenericBean {
+public class AnyadirTemaBean extends TemaBean implements Serializable, GenericBean {
 	private static final long serialVersionUID = 1L;
 
-	private List<String> temas;
-
-    private String tema;
+    private String name;
     
     private String pregunta;
 
     public AnyadirTemaBean() {
     }
+    
+    public String getName() {
+		return name;
+	}
 
-    public List<String> getTemas() {
-        return temas;
-    }
-
-    public String getTema() {
-        return tema;
-    }
-
-    public void setTema(String tema) {
-        this.tema = tema;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
     
     public String getPregunta() {
         return pregunta;
@@ -39,18 +33,14 @@ public class AnyadirTemaBean implements Serializable, GenericBean {
     public void setPregunta(String pregunta) {
         this.pregunta = pregunta;
     }
-
-    public void update() {
-    	ControllerFactory.setFactory(new ControllerServletFactory());
-    	this.temas = new ArrayList<String>();
-    	//this.temas.addAll(ControllerFactory.getFactory().getAnyadirTemaController().obtenerListaTemas());
-    }
     
     public void process() {
     	Tema tema = new Tema();
-    	tema.setName(this.getTema());
+    	tema.setName(this.getName());
     	tema.setPregunta(this.getPregunta());
     	ControllerFactory.setFactory(new ControllerServletFactory());
     	ControllerFactory.getFactory().getAnyadirTemaController().anyadirTema(tema);
     }
+
+	
 }
