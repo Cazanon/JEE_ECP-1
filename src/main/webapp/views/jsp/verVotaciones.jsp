@@ -10,11 +10,11 @@
 </head>
 <body>
 	<h1>Ver Votaciones</h1>
-	<c:set var="anyadirTemaBean" scope="request" value="${anyadirTema}" />
-	<div>${anyadirTemaBean.update()}</div>
+	<c:set var="verVotacionesBean" scope="request" value="${verVotaciones}" />
+	<div>${verVotacionesBean.update()}</div>
 	
 	<ul>
-		<c:forEach var="tema" items="${anyadirTemaBean.temas}">
+		<c:forEach var="tema" items="${verVotacionesBean.temas}">
 			<li>${tema.name}</li>
 		</c:forEach>
 	</ul>
