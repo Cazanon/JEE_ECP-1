@@ -71,6 +71,12 @@ public class Dispatcher extends HttpServlet {
 			eliminarTemaBean.process();
 			view = "home";
 			break;
+		case "verVotaciones":
+			VerVotacionesBean verVotacionesBean = new VerVotacionesBean();
+			verVotacionesBean.setId(Integer.valueOf(request.getParameter("select")));
+			verVotacionesBean.process();
+			view = "home";
+			break;
 		default:
 			view = "home";
 		}
