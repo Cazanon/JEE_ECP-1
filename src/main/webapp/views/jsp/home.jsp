@@ -11,7 +11,7 @@
 	<p>
 		<a href="VotarView.jsp">Votar</a>
 	<p>
-		<a href="VerVotacionesView.jsp">Ver Votaciones</a>
+		<a href="/JEE_ECP/jsp/verVotaciones">Ver Votaciones</a>
 	<p>
 		<a href="/JEE_ECP/jsp/anyadirTema">Añadir Tema</a>
 	<p>
