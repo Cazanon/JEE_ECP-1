@@ -31,10 +31,18 @@ public class Dispatcher extends HttpServlet {
 			request.setAttribute(action, anyadirTemaBean);
 			view = action;
 			break;
-		case "eliminarTema":
-			EliminarTemaBean eliminarTemaBean = new EliminarTemaBean();
-			request.setAttribute(action, eliminarTemaBean);
+		case "autorizacion":
 			view = action;
+			break;
+		case "eliminarTema":
+			String autorizacion = request.getParameter("autorizacion");
+			if(autorizacion.equals("666")) {
+				EliminarTemaBean eliminarTemaBean = new EliminarTemaBean();
+				request.setAttribute(action, eliminarTemaBean);
+				view = action;
+			} else {
+				view = "error";
+			}
 			break;
 		case "verVotaciones":
 			VerVotacionesBean verVotacionesBean = new VerVotacionesBean();
