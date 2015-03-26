@@ -1,14 +1,14 @@
 package views.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 import controllers.ControllerFactory;
-import controllers.servlet.ControllerServletFactory;
 
 public class VerVotacionesBean extends TemaBean implements Serializable, GenericBean {
 	private static final long serialVersionUID = 1L;
 	
-	private int numeroVotosPorTema;
+	private List<Integer> numeroVotosPorTema;
 	
 	private Integer id;
 
@@ -22,19 +22,23 @@ public class VerVotacionesBean extends TemaBean implements Serializable, Generic
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public int getNumeroVotosPorTema() {
+	
+	public List<Integer> getNumeroVotosPorTema() {
 		return numeroVotosPorTema;
 	}
 
-	public void setNumeroVotosPorTema(int numeroVotosPorTema) {
+	public void setNumeroVotosPorTema(List<Integer> numeroVotosPorTema) {
 		this.numeroVotosPorTema = numeroVotosPorTema;
+	}
+	
+	@Override
+	public void update() {
+		super.update();
+		this.setNumeroVotosPorTema(ControllerFactory.getFactory().getVerVotacionesController().obtenerListaVotosPorTema());
 	}
 
 	@Override
 	public void process() {
-		ControllerFactory.setFactory(new ControllerServletFactory());
-    	this.setNumeroVotosPorTema(ControllerFactory.getFactory().getVerVotacionesController().obtenerListaVotosPorTema(id).size());
 	}
 	
 }
