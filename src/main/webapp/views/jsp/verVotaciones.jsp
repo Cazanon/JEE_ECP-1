@@ -13,12 +13,12 @@
 	<c:set var="verVotacionesBean" scope="request" value="${verVotaciones}" />
 	<div>${verVotacionesBean.update()}</div>
 	<p>Temas actuales:</p>
-	<ul>
+	<ul style="float: left; width: 8%; ">
 		<c:forEach var="tema" items="${verVotacionesBean.temas}">
 			<li>${tema.name}</li>
 		</c:forEach>
 	</ul>
-	<ul>
+	<ul style="float: left; width: 8%; ">
 		<c:forEach var="numeroVotos" items="${verVotacionesBean.numeroVotosPorTema}">
 			<li>${numeroVotos}</li>
 		</c:forEach>
