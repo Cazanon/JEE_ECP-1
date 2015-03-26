@@ -9,9 +9,10 @@ import controllers.VotarController;
 public class VotarServletController implements VotarController {
 
 	@Override
-	public void votar(Tema tema, Voto voto) {
-		tema.setVoto(voto);
+	public void votar(Integer id, Voto voto) {
 		DaoFactory.setFactory(new DaoJpaFactory());
+		Tema tema = DaoFactory.getFactory().getTemaDao().read(id);
+		tema.setVoto(voto);
     	DaoFactory.getFactory().getTemaDao().update(tema);
 	}
 
