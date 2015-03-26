@@ -5,6 +5,7 @@ import controllers.ControllerFactory;
 import controllers.EliminarTemaController;
 import controllers.TemaController;
 import controllers.VerVotacionesController;
+import controllers.VotarController;
 
 public class ControllerServletFactory extends ControllerFactory {
 
@@ -12,6 +13,7 @@ public class ControllerServletFactory extends ControllerFactory {
 	private EliminarTemaController eliminarTemaController;
 	private TemaController temaController;
 	private VerVotacionesController verVotacionesController;
+	private VotarController votarController;
 
 	@Override
 	public AnyadirTemaController getAnyadirTemaController() {
@@ -43,6 +45,14 @@ public class ControllerServletFactory extends ControllerFactory {
 			this.verVotacionesController = new VerVotacionesServletController();
 		}
 		return verVotacionesController;
+	}
+
+	@Override
+	public VotarController getVotarController() {
+		if (this.votarController == null) {
+			this.votarController = new VotarServletController();
+		}
+		return votarController;
 	}
 
 }
