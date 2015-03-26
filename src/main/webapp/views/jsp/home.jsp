@@ -9,7 +9,7 @@
 <body>
 	<h1>Java EE. Aplicación Votación</h1>
 	<p>
-		<a href="VotarView.jsp">Votar</a>
+		<a href="/JEE_ECP/jsp/votar">Votar</a>
 	<p>
 		<a href="/JEE_ECP/jsp/verVotaciones">Ver Votaciones</a>
 	<p>

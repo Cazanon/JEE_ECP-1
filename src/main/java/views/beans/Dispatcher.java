@@ -41,6 +41,11 @@ public class Dispatcher extends HttpServlet {
 			request.setAttribute(action, verVotacionesBean);
 			view = action;
 			break;
+		case "votar":
+			VotarBean votarBean = new VotarBean();
+			request.setAttribute(action, votarBean);
+			view = action;
+			break;
 		default:
 			view = "home";
 		}
@@ -69,12 +74,6 @@ public class Dispatcher extends HttpServlet {
 			EliminarTemaBean eliminarTemaBean = new EliminarTemaBean();
 			eliminarTemaBean.setId(Integer.valueOf(request.getParameter("select")));
 			eliminarTemaBean.process();
-			view = "home";
-			break;
-		case "verVotaciones":
-			VerVotacionesBean verVotacionesBean = new VerVotacionesBean();
-			verVotacionesBean.setId(Integer.valueOf(request.getParameter("select")));
-			verVotacionesBean.process();
 			view = "home";
 			break;
 		default:
