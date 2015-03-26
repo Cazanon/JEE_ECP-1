@@ -34,7 +34,7 @@ public class VerVotacionesBean extends TemaBean implements Serializable, Generic
 	@Override
 	public void update() {
 		super.update();
-		this.setNumeroVotosPorTema(ControllerFactory.getFactory().getVerVotacionesController().obtenerListaVotosPorTema());
+		this.setNumeroVotosPorTema(ControllerFactory.getFactory().getVerVotacionesController().obtenerListaVotosPorTema(this.temas));
 	}
 
 	@Override
