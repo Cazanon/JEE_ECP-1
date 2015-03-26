@@ -21,7 +21,7 @@
 			</c:forEach>
 		</select>
 
-		<p>Valoración: <input name="name" type="text" /></p>
+		<p>Valoración: <input name="valoracion" type="text" /></p>
 		<p><input type="submit" value="Votar" /></p>
 	</form>
 	<p>
