@@ -20,4 +20,11 @@ public class VerVotacionesServletController implements VerVotacionesController {
     	return numeroVotosPorTema;
 	}
 
+	@Override
+	public List<List<Integer>> obtenerListaVotosPorTemaYNivelDeEstudios(
+			List<Tema> temas) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
