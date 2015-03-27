@@ -23,9 +23,9 @@ public class VerVotacionesServletController implements VerVotacionesController {
 	}
 
 	@Override
-	public List<List<Integer>> obtenerListaVotosPorTemaYNivelDeEstudios(
+	public List<List<Double>> obtenerListaVotosPorTemaYNivelDeEstudios(
 			List<Tema> temas) {
-		List<List<Integer>> numeroVotosPorTemaYNivelDeEstudios = new ArrayList<List<Integer>>();
+		List<List<Double>> numeroVotosPorTemaYNivelDeEstudios = new ArrayList<List<Double>>();
 		DaoFactory.setFactory(new DaoJpaFactory());
 		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
 			numeroVotosPorTemaYNivelDeEstudios.add(Utils.calcularMedia(temas, nivelEstudios.toString()));

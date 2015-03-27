@@ -8,6 +8,6 @@ public interface VerVotacionesController {
 	
 	List<Integer> obtenerListaVotosPorTema(List<Tema> temas);
 	
-	List<List<Integer>> obtenerListaVotosPorTemaYNivelDeEstudios(List<Tema> temas);
+	List<List<Double>> obtenerListaVotosPorTemaYNivelDeEstudios(List<Tema> temas);
 
 }

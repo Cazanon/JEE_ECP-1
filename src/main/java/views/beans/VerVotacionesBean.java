@@ -12,7 +12,7 @@ public class VerVotacionesBean extends TemaBean implements Serializable, Generic
 	
 	private Integer id;
 	
-	private List<List<Integer>> numeroVotosPorTemaYNivelDeEstudios;
+	private List<List<Double>> numeroVotosPorTemaYNivelDeEstudios;
 
     public VerVotacionesBean() {
     }
@@ -33,12 +33,12 @@ public class VerVotacionesBean extends TemaBean implements Serializable, Generic
 		this.numeroVotosPorTema = numeroVotosPorTema;
 	}
 	
-	public List<List<Integer>> getNumeroVotosPorTemaYNivelDeEstudios() {
+	public List<List<Double>> getNumeroVotosPorTemaYNivelDeEstudios() {
 		return numeroVotosPorTemaYNivelDeEstudios;
 	}
 
 	public void setNumeroVotosPorTemaYNivelDeEstudios(
-			List<List<Integer>> numeroVotosPorTemaYNivelDeEstudios) {
+			List<List<Double>> numeroVotosPorTemaYNivelDeEstudios) {
 		this.numeroVotosPorTemaYNivelDeEstudios = numeroVotosPorTemaYNivelDeEstudios;
 	}
 	
