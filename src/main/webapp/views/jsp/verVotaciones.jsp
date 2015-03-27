@@ -24,6 +24,14 @@
 		</c:forEach>
 	</ul>
 	
+	<c:forEach var="nivelEstudios" items="${verVotacionesBean.numeroVotosPorTemaYNivelDeEstudios}">
+		<ul style="float: left; width: 8%; ">
+			<c:forEach var="numeroVotosPorNivelDeEstudios" items="${nivelEstudios}">
+				<li>${numeroVotosPorNivelDeEstudios}</li>
+			</c:forEach>
+		</ul>
+	</c:forEach>
+	
 	<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
 </body>
 </html>
