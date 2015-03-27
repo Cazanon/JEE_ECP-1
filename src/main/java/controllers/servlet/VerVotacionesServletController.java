@@ -6,6 +6,8 @@ import java.util.List;
 import persistence.models.daos.DaoFactory;
 import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
+import persistence.models.utils.NivelEstudios;
+import utils.Utils;
 import controllers.VerVotacionesController;
 
 public class VerVotacionesServletController implements VerVotacionesController {
@@ -23,8 +25,12 @@ public class VerVotacionesServletController implements VerVotacionesController {
 	@Override
 	public List<List<Integer>> obtenerListaVotosPorTemaYNivelDeEstudios(
 			List<Tema> temas) {
-		// TODO Auto-generated method stub
-		return null;
+		List<List<Integer>> numeroVotosPorTemaYNivelDeEstudios = new ArrayList<List<Integer>>();
+		DaoFactory.setFactory(new DaoJpaFactory());
+		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
+			numeroVotosPorTemaYNivelDeEstudios.add(Utils.calcularMedia(temas, nivelEstudios.toString()));
+		}
+		return numeroVotosPorTemaYNivelDeEstudios;
 	}
 
 }
