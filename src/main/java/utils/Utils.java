@@ -41,7 +41,7 @@ public class Utils {
 		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
 			nivelesEstudios.add(nivelEstudios.name());
 		}
-		return null;
+		return nivelesEstudios;
 	}
 
 }
