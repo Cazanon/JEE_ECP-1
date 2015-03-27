@@ -17,6 +17,8 @@ public class VotarBean extends TemaBean implements Serializable, GenericBean {
 	private Integer id;
 	
 	private List<String> nivelesEstudios;
+	
+	private String nivelEstudios;
 
 	public int getValoracion() {
 		return valoracion;
@@ -42,6 +44,14 @@ public class VotarBean extends TemaBean implements Serializable, GenericBean {
 		this.nivelesEstudios = nivelesEstudios;
 	}
 
+	public String getNivelEstudios() {
+		return nivelEstudios;
+	}
+	
+	public void setNivelEstudios(String nivelEstudios) {
+		this.nivelEstudios = nivelEstudios;
+	}
+
 	@Override
 	public void update() {
 		super.update();
@@ -51,7 +61,7 @@ public class VotarBean extends TemaBean implements Serializable, GenericBean {
 
 	@Override
 	public void process() {
-		Voto voto = new Voto(valoracion, "cualquierString", NivelEstudios.PRIMARIOS);
+		Voto voto = new Voto(valoracion, "cualquierString", NivelEstudios.valueOf(nivelEstudios));
 		ControllerFactory.setFactory(new ControllerServletFactory());
     	ControllerFactory.getFactory().getVotarController().votar(id, voto);
 	}
