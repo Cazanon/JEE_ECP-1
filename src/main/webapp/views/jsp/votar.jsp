@@ -7,6 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Votar</title>
+
+<script>
+	function preguntaTema(pregunta) {
+		var x = document.getElementById("select").value;
+		document.getElementById("pregunta").innerHTML = "Pregunta: " + pregunta;
+	}
+</script>
+
 </head>
 <body>
 	<h1>Votar</h1>
@@ -17,15 +25,25 @@
 
 		<select name="select" id="select" >
 			<c:forEach var="tema" items="${votarBean.temas}">
-				<option value="${tema.id}">${tema.name}</option>
+				<option value="${tema.id}" title="preguntaTema(${tema.pregunta})" >${tema.name}</option>
 			</c:forEach>
 		</select>
 
+		<p id="pregunta"></p>
+
 		<p>Valoración: <input name="valoracion" type="text" /></p>
+		
+		<select name="selectEstudios" id="selectEstudios" >
+			<c:forEach var="nivelEstudios" items="${votarBean.nivelesEstudios}">
+				<option value="${nivelEstudios}" >${nivelEstudios}</option>
+			</c:forEach>
+		</select>
+		
 		<p><input type="submit" value="Votar" /></p>
+		
 	</form>
-	<p>
-		<a href="/JEE_ECP/jsp/home">Volver a Home</a>
-	</p>
+	
+	<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
+	
 </body>
 </html>
