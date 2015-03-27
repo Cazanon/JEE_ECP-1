@@ -5,6 +5,7 @@ import java.util.List;
 
 import persistence.models.entities.Tema;
 import persistence.models.entities.Voto;
+import persistence.models.utils.NivelEstudios;
 
 public class Utils {
 
@@ -36,7 +37,10 @@ public class Utils {
 	}
 
 	public static List<String> getNivelesEstudios() {
-		// TODO Auto-generated method stub
+		List<String> nivelesEstudios = new ArrayList<String>();
+		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
+			nivelesEstudios.add(nivelEstudios.name());
+		}
 		return null;
 	}
 
