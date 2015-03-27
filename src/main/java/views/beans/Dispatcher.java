@@ -88,6 +88,7 @@ public class Dispatcher extends HttpServlet {
 			VotarBean votarBean = new VotarBean();
 			votarBean.setId(Integer.valueOf(request.getParameter("select")));
 			votarBean.setValoracion(Integer.valueOf(request.getParameter("valoracion")));
+			votarBean.setNivelEstudios(request.getParameter("select"));
 			votarBean.process();
 			view = "home";
 			break;
