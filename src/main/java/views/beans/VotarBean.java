@@ -1,6 +1,7 @@
 package views.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 import persistence.models.entities.Voto;
 import persistence.models.utils.NivelEstudios;
@@ -14,6 +15,8 @@ public class VotarBean extends TemaBean implements Serializable, GenericBean {
 	private int valoracion;
 	
 	private Integer id;
+	
+	private List<String> nivelesEstudios;
 
 	public int getValoracion() {
 		return valoracion;
@@ -29,6 +32,21 @@ public class VotarBean extends TemaBean implements Serializable, GenericBean {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public List<String> getNivelesEstudios() {
+		return nivelesEstudios;
+	}
+	
+	public void setNivelesEstudios(List<String> nivelesEstudios) {
+		this.nivelesEstudios = nivelesEstudios;
+	}
+
+	@Override
+	public void update() {
+		super.update();
+		ControllerFactory.setFactory(new ControllerServletFactory());
+		this.setNivelesEstudios(ControllerFactory.getFactory().getVotarController().getNivelesEstudios());
 	}
 
 	@Override

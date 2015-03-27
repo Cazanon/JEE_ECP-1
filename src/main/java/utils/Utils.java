@@ -35,4 +35,9 @@ public class Utils {
 		return mediaVotosPorNivelDeEstudios;
 	}
 
+	public static List<String> getNivelesEstudios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
