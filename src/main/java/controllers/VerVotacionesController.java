@@ -10,4 +10,6 @@ public interface VerVotacionesController {
 	
 	List<List<Double>> obtenerListaVotosPorTemaYNivelDeEstudios(List<Tema> temas);
 
+	List<String> obtenerColumnHeaders();
+
 }

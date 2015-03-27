@@ -13,6 +13,8 @@ public class VerVotacionesBean extends TemaBean implements Serializable, Generic
 	private Integer id;
 	
 	private List<List<Double>> numeroVotosPorTemaYNivelDeEstudios;
+	
+	private List<String> columnHeaders;
 
     public VerVotacionesBean() {
     }
@@ -42,11 +44,20 @@ public class VerVotacionesBean extends TemaBean implements Serializable, Generic
 		this.numeroVotosPorTemaYNivelDeEstudios = numeroVotosPorTemaYNivelDeEstudios;
 	}
 	
+	public List<String> getColumnHeaders() {
+		return columnHeaders;
+	}
+
+	public void setColumnHeaders(List<String> columnHeaders) {
+		this.columnHeaders = columnHeaders;
+	}
+	
 	@Override
 	public void update() {
 		super.update();
 		this.setNumeroVotosPorTema(ControllerFactory.getFactory().getVerVotacionesController().obtenerListaVotosPorTema(this.temas));
 		this.setNumeroVotosPorTemaYNivelDeEstudios(ControllerFactory.getFactory().getVerVotacionesController().obtenerListaVotosPorTemaYNivelDeEstudios(this.temas));
+		this.setColumnHeaders(ControllerFactory.getFactory().getVerVotacionesController().obtenerColumnHeaders());
 	}
 
 	@Override

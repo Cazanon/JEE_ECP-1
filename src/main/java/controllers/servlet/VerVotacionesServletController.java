@@ -33,4 +33,10 @@ public class VerVotacionesServletController implements VerVotacionesController {
 		return numeroVotosPorTemaYNivelDeEstudios;
 	}
 
+	@Override
+	public List<String> obtenerColumnHeaders() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
