@@ -12,26 +12,42 @@
 	<h1>Ver Votaciones</h1>
 	<c:set var="verVotacionesBean" scope="request" value="${verVotaciones}" />
 	<div>${verVotacionesBean.update()}</div>
-	<p>Temas actuales:</p>
-	<ul style="float: left; width: 8%; ">
-		<c:forEach var="tema" items="${verVotacionesBean.temas}">
-			<li>${tema.name}</li>
+
+	<div style="position:absolute; width: 100%; ">
+		<c:forEach var="columnHeader"
+			items="${verVotacionesBean.columnHeaders}">
+			<p style="float: left; width: 15%; ">${columnHeader}</p>
 		</c:forEach>
-	</ul>
-	<ul style="float: left; width: 8%; ">
-		<c:forEach var="numeroVotos" items="${verVotacionesBean.numeroVotosPorTema}">
-			<li>${numeroVotos}</li>
-		</c:forEach>
-	</ul>
-	
-	<c:forEach var="nivelEstudios" items="${verVotacionesBean.numeroVotosPorTemaYNivelDeEstudios}">
-		<ul style="float: left; width: 8%; ">
-			<c:forEach var="numeroVotosPorNivelDeEstudios" items="${nivelEstudios}">
-				<li>${numeroVotosPorNivelDeEstudios}</li>
+	</div>
+
+	<div style="position:absolute; top:12%; width: 100%; ">
+		<ul style="float: left; width: 12%;">
+			<c:forEach var="tema" items="${verVotacionesBean.temas}">
+				<li>${tema.name}</li>
 			</c:forEach>
 		</ul>
-	</c:forEach>
+
+		<ul style="float: left; width: 12%;">
+			<c:forEach var="numeroVotos"
+				items="${verVotacionesBean.numeroVotosPorTema}">
+				<li>${numeroVotos}</li>
+			</c:forEach>
+		</ul>
+
+		<c:forEach var="nivelEstudios"
+			items="${verVotacionesBean.numeroVotosPorTemaYNivelDeEstudios}">
+			<ul style="float: left; width: 12%;">
+				<c:forEach var="numeroVotosPorNivelDeEstudios"
+					items="${nivelEstudios}">
+					<li>${numeroVotosPorNivelDeEstudios}</li>
+				</c:forEach>
+			</ul>
+		</c:forEach>
+	</div>
 	
-	<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
+	<div style="position:absolute; top:35%; width: 100%; ">
+		<p><a href="/JEE_ECP/jsp/home">Volver a Home</a></p>
+	</div>
+	
 </body>
 </html>
