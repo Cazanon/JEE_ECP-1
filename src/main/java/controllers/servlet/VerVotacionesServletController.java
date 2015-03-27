@@ -35,8 +35,13 @@ public class VerVotacionesServletController implements VerVotacionesController {
 
 	@Override
 	public List<String> obtenerColumnHeaders() {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> columnsHeaders = new ArrayList<String>();
+		columnsHeaders.add("Temas:");
+		columnsHeaders.add("Número de votos:");
+		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
+			columnsHeaders.add(nivelEstudios.name() + ":");
+		}
+		return columnsHeaders;
 	}
 
 }
