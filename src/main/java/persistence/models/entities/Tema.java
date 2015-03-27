@@ -45,6 +45,7 @@ public class Tema {
 	}
     
     public Tema(){
+    	this.setVotos(new ArrayList<Voto>());
     }
 
 	public Integer getId() {
