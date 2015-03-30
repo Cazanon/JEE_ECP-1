@@ -1,4 +1,4 @@
-package controllers.servlet;
+package controllers.ejb;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
 import controllers.TemaController;
 
-public class TemaServletController implements TemaController {
+public class TemaEjbController implements TemaController {
 
 	@Override
 	public List<Tema> obtenerListaTemas() {

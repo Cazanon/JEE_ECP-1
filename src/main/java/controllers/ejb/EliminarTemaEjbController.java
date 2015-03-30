@@ -1,10 +1,10 @@
-package controllers.servlet;
+package controllers.ejb;
 
 import persistence.models.daos.DaoFactory;
 import persistence.models.daos.jpa.DaoJpaFactory;
 import controllers.EliminarTemaController;
 
-public class EliminarTemaServletController extends TemaServletController implements EliminarTemaController {
+public class EliminarTemaEjbController extends TemaEjbController implements EliminarTemaController {
 
 	@Override
 	public void eliminarTema(Integer id) {

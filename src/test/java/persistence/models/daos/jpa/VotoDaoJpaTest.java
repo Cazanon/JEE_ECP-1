@@ -56,7 +56,7 @@ public class VotoDaoJpaTest {
         this.voto = new Voto(8, "ipUsuario2", NivelEstudios.UNIVERSITARIOS);
         dao = DaoFactory.getFactory().getVotoDao();
         dao.create(voto);
-        assertEquals(2, dao.findAll().size());
+        assertEquals(9, dao.findAll().size());
     }
 
     @After

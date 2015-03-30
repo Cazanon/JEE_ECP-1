@@ -3,7 +3,7 @@ package views.beans;
 import java.io.Serializable;
 
 import controllers.ControllerFactory;
-import controllers.servlet.ControllerServletFactory;
+import controllers.ejb.ControllerEjbFactory;
 
 public class EliminarTemaBean extends TemaBean implements Serializable, GenericBean {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class EliminarTemaBean extends TemaBean implements Serializable, GenericB
     }
     
     public void process() {
-    	ControllerFactory.setFactory(new ControllerServletFactory());
+    	ControllerFactory.setFactory(new ControllerEjbFactory());
     	ControllerFactory.getFactory().getEliminarTemaController().eliminarTema(id);
     }
 }

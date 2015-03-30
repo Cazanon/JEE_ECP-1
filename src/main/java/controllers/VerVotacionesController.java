@@ -11,5 +11,7 @@ public interface VerVotacionesController {
 	List<List<Double>> obtenerListaVotosPorTemaYNivelDeEstudios(List<Tema> temas);
 
 	List<String> obtenerColumnHeaders();
+	
+	List<Double> calcularMedia(List<Tema> temas, String nivelDeEstudios);
 
 }

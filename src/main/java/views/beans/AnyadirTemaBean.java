@@ -3,7 +3,7 @@ package views.beans;
 import java.io.Serializable;
 
 import controllers.ControllerFactory;
-import controllers.servlet.ControllerServletFactory;
+import controllers.ejb.ControllerEjbFactory;
 import persistence.models.entities.Tema;
 
 public class AnyadirTemaBean extends TemaBean implements Serializable, GenericBean {
@@ -36,7 +36,7 @@ public class AnyadirTemaBean extends TemaBean implements Serializable, GenericBe
     	Tema tema = new Tema();
     	tema.setName(this.getName());
     	tema.setPregunta(this.getPregunta());
-    	ControllerFactory.setFactory(new ControllerServletFactory());
+    	ControllerFactory.setFactory(new ControllerEjbFactory());
     	ControllerFactory.getFactory().getAnyadirTemaController().anyadirTema(tema);
     }
 

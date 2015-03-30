@@ -1,4 +1,4 @@
-package controllers.servlet;
+package controllers.ejb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 import persistence.models.daos.DaoFactory;
 import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
+import persistence.models.entities.Voto;
 import persistence.models.utils.NivelEstudios;
-import utils.Utils;
 import controllers.VerVotacionesController;
 
-public class VerVotacionesServletController implements VerVotacionesController {
+public class VerVotacionesEjbController implements VerVotacionesController {
 
 	@Override
 	public List<Integer> obtenerListaVotosPorTema(List<Tema> temas) {
@@ -28,7 +28,7 @@ public class VerVotacionesServletController implements VerVotacionesController {
 		List<List<Double>> numeroVotosPorTemaYNivelDeEstudios = new ArrayList<List<Double>>();
 		DaoFactory.setFactory(new DaoJpaFactory());
 		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
-			numeroVotosPorTemaYNivelDeEstudios.add(Utils.calcularMedia(temas, nivelEstudios.toString()));
+			numeroVotosPorTemaYNivelDeEstudios.add(calcularMedia(temas, nivelEstudios.toString()));
 		}
 		return numeroVotosPorTemaYNivelDeEstudios;
 	}
@@ -42,6 +42,34 @@ public class VerVotacionesServletController implements VerVotacionesController {
 			columnsHeaders.add(nivelEstudios.name() + ":");
 		}
 		return columnsHeaders;
+	}
+	
+	@Override
+	public List<Double> calcularMedia(List<Tema> temas, String nivelDeEstudios) {
+		List<Double> mediaVotosPorNivelDeEstudios = new ArrayList<Double>();
+		int sumaValoraciones;
+		int totalVotos;
+		double media;
+
+		for (Tema tema : temas) {
+			sumaValoraciones = 0;
+			totalVotos = 0;
+			media = 0;
+			for (Voto voto : tema.getVotos()) {
+				if(voto.getNivelEstudios().name().equals(nivelDeEstudios)) {
+					sumaValoraciones += voto.getValoracion();
+					totalVotos++;
+				}
+			}
+			if(totalVotos == 0) {
+				media = 0;
+			} else {
+				media = sumaValoraciones / totalVotos;
+			}
+			mediaVotosPorNivelDeEstudios.add(media);
+		}
+
+		return mediaVotosPorNivelDeEstudios;
 	}
 
 }

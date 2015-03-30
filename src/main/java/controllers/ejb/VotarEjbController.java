@@ -1,15 +1,16 @@
-package controllers.servlet;
+package controllers.ejb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import persistence.models.daos.DaoFactory;
 import persistence.models.daos.jpa.DaoJpaFactory;
 import persistence.models.entities.Tema;
 import persistence.models.entities.Voto;
-import utils.Utils;
+import persistence.models.utils.NivelEstudios;
 import controllers.VotarController;
 
-public class VotarServletController implements VotarController {
+public class VotarEjbController implements VotarController {
 
 	@Override
 	public void votar(Integer id, Voto voto) {
@@ -21,7 +22,11 @@ public class VotarServletController implements VotarController {
 
 	@Override
 	public List<String> getNivelesEstudios() {
-		return Utils.getNivelesEstudios();
+		List<String> nivelesEstudios = new ArrayList<String>();
+		for(NivelEstudios nivelEstudios : NivelEstudios.values()) {
+			nivelesEstudios.add(nivelEstudios.name());
+		}
+		return nivelesEstudios;
 	}
 
 }

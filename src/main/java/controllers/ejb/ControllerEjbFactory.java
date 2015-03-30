@@ -1,4 +1,4 @@
-package controllers.servlet;
+package controllers.ejb;
 
 import controllers.AnyadirTemaController;
 import controllers.ControllerFactory;
@@ -7,7 +7,7 @@ import controllers.TemaController;
 import controllers.VerVotacionesController;
 import controllers.VotarController;
 
-public class ControllerServletFactory extends ControllerFactory {
+public class ControllerEjbFactory extends ControllerFactory {
 
 	private AnyadirTemaController anyadirTemaController;
 	private EliminarTemaController eliminarTemaController;
@@ -18,7 +18,7 @@ public class ControllerServletFactory extends ControllerFactory {
 	@Override
 	public AnyadirTemaController getAnyadirTemaController() {
 		if (this.anyadirTemaController == null) {
-			this.anyadirTemaController = new AnyadirTemaServletController();
+			this.anyadirTemaController = new AnyadirTemaEjbController();
 		}
 		return anyadirTemaController;
 	}
@@ -26,7 +26,7 @@ public class ControllerServletFactory extends ControllerFactory {
 	@Override
 	public EliminarTemaController getEliminarTemaController() {
 		if (this.eliminarTemaController == null) {
-			this.eliminarTemaController = new EliminarTemaServletController();
+			this.eliminarTemaController = new EliminarTemaEjbController();
 		}
 		return eliminarTemaController;
 	}
@@ -34,7 +34,7 @@ public class ControllerServletFactory extends ControllerFactory {
 	@Override
 	public TemaController getTemaController() {
 		if (this.temaController == null) {
-			this.temaController = new TemaServletController();
+			this.temaController = new TemaEjbController();
 		}
 		return temaController;
 	}
@@ -42,7 +42,7 @@ public class ControllerServletFactory extends ControllerFactory {
 	@Override
 	public VerVotacionesController getVerVotacionesController() {
 		if (this.verVotacionesController == null) {
-			this.verVotacionesController = new VerVotacionesServletController();
+			this.verVotacionesController = new VerVotacionesEjbController();
 		}
 		return verVotacionesController;
 	}
@@ -50,7 +50,7 @@ public class ControllerServletFactory extends ControllerFactory {
 	@Override
 	public VotarController getVotarController() {
 		if (this.votarController == null) {
-			this.votarController = new VotarServletController();
+			this.votarController = new VotarEjbController();
 		}
 		return votarController;
 	}
