@@ -1,22 +1,13 @@
 package controllers.ws;
 
-import java.util.List;
-
-import persistence.models.entities.Tema;
+import ws.TemaUris;
 import controllers.EliminarTemaController;
 
-public class EliminarTemaControllerWs implements EliminarTemaController {
-
-	@Override
-	public List<Tema> obtenerListaTemas() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public class EliminarTemaControllerWs extends TemaControllerWs implements EliminarTemaController {
 
 	@Override
 	public void eliminarTema(Integer id) {
-		// TODO Auto-generated method stub
-
+		ControllerWs.buildWebServiceManager(TemaUris.PATH_TEMAS, id.toString()).delete();
 	}
 
 }
