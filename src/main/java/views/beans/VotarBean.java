@@ -7,6 +7,7 @@ import persistence.models.entities.Voto;
 import persistence.models.utils.NivelEstudios;
 import controllers.ControllerFactory;
 import controllers.ejb.ControllerEjbFactory;
+import controllers.ws.ControllerWsFactory;
 
 public class VotarBean extends TemaBean implements Serializable, GenericBean {
 
@@ -55,7 +56,8 @@ public class VotarBean extends TemaBean implements Serializable, GenericBean {
 	@Override
 	public void update() {
 		super.update();
-		ControllerFactory.setFactory(new ControllerEjbFactory());
+//		ControllerFactory.setFactory(new ControllerEjbFactory());
+		ControllerFactory.setFactory(new ControllerWsFactory());
 		this.setNivelesEstudios(ControllerFactory.getFactory().getVotarController().getNivelesEstudios());
 	}
 
