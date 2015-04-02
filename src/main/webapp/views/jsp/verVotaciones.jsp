@@ -13,7 +13,7 @@
 	<c:set var="verVotacionesBean" scope="request" value="${verVotaciones}" />
 	<div>${verVotacionesBean.update()}</div>
 
-	<div style="position:absolute; width: 100%; ">
+	<div style="position:absolute; top:8%; width: 100%; ">
 		<c:forEach var="columnHeader"
 			items="${verVotacionesBean.columnHeaders}">
 			<p style="float: left; width: 15%; ">${columnHeader}</p>
