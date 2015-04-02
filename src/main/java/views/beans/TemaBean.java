@@ -6,6 +6,7 @@ import java.util.List;
 import persistence.models.entities.Tema;
 import controllers.ControllerFactory;
 import controllers.ejb.ControllerEjbFactory;
+import controllers.ws.ControllerWsFactory;
 
 public class TemaBean implements Serializable {
 	
@@ -14,7 +15,8 @@ public class TemaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public void update() {
-    	ControllerFactory.setFactory(new ControllerEjbFactory());
+//    	ControllerFactory.setFactory(new ControllerEjbFactory());
+		ControllerFactory.setFactory(new ControllerWsFactory());
     	this.setTemas(ControllerFactory.getFactory().getTemaController().obtenerListaTemas());
     }
 
