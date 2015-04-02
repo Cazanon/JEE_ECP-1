@@ -1,22 +1,14 @@
 package controllers.ws;
 
-import java.util.List;
-
 import persistence.models.entities.Tema;
+import ws.TemaUris;
 import controllers.AnyadirTemaController;
 
-public class AnyadirTemaControllerWs implements AnyadirTemaController {
-
-	@Override
-	public List<Tema> obtenerListaTemas() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public class AnyadirTemaControllerWs extends TemaControllerWs implements AnyadirTemaController {
 
 	@Override
 	public void anyadirTema(Tema tema) {
-		// TODO Auto-generated method stub
-
+		ControllerWs.buildWebServiceManager(TemaUris.PATH_TEMAS).create(tema);
 	}
 
 }
