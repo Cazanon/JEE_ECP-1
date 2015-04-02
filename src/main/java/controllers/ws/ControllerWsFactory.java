@@ -22,11 +22,6 @@ public class ControllerWsFactory extends ControllerFactory {
     private VotarController votarController;
 
     public ControllerWsFactory() {
-        // Crear peticion rest para crear contexto. Almacenar la referencia del
-        // contexto en el servidor
-
-        WsManager wsManager = ControllerWs.buildWebServiceManager(SessionUris.PATH_SESSIONS);
-        wsManager.create();
     }
 
 	@Override

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import controllers.ControllerFactory;
 import controllers.ejb.ControllerEjbFactory;
+import controllers.ws.ControllerWsFactory;
 import persistence.models.entities.Tema;
 
 public class AnyadirTemaBean extends TemaBean implements Serializable, GenericBean {
@@ -36,7 +37,8 @@ public class AnyadirTemaBean extends TemaBean implements Serializable, GenericBe
     	Tema tema = new Tema();
     	tema.setName(this.getName());
     	tema.setPregunta(this.getPregunta());
-    	ControllerFactory.setFactory(new ControllerEjbFactory());
+//    	ControllerFactory.setFactory(new ControllerEjbFactory());
+    	ControllerFactory.setFactory(new ControllerWsFactory());
     	ControllerFactory.getFactory().getAnyadirTemaController().anyadirTema(tema);
     }
 
